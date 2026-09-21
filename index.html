@@ -37,8 +37,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: rgba(15, 15, 26, 0.9);
+            padding: 18px 8%;
+            background: rgba(11, 12, 16, 0.95);
             position: fixed;
             width: 100%;
             top: 0;
@@ -75,7 +75,7 @@
 
         /* Hero Banner Section */
         .hero {
-            min-height: 90vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -94,8 +94,8 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
+            font-size: 1.15rem;
+            max-width: 650px;
             margin-bottom: 30px;
             color: #a0a5b5;
         }
@@ -120,7 +120,23 @@
             box-shadow: 0 0 25px rgba(255, 0, 127, 0.6);
         }
 
-        /* Main Section Container */
+        .btn-small {
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            margin-top: 10px;
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            cursor: pointer;
+        }
+
+        .btn-small:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        /* Section Styling */
         .section {
             padding: 70px 8%;
         }
@@ -151,7 +167,7 @@
             text-align: center;
             border: 1px solid rgba(102, 252, 241, 0.2);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
         }
 
@@ -162,8 +178,8 @@
             margin: 20px 0;
             cursor: crosshair;
             width: 100%;
-            max-width: 480px;
             height: 280px;
+            touch-action: none;
         }
 
         .score-board {
@@ -172,7 +188,7 @@
             color: var(--accent);
         }
 
-        /* Game Concepts Cards */
+        /* Portfolio Cards */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -182,7 +198,7 @@
         .card {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 20px;
+            padding: 25px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: 0.3s;
             text-align: center;
@@ -249,6 +265,7 @@
             padding: 15px;
             border-radius: 8px;
             font-size: 0.85rem;
+            border: 1px dashed rgba(255,255,255,0.1);
         }
 
         footer {
@@ -269,29 +286,29 @@
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- Header Navigation -->
     <header>
         <div class="logo">Game Design <span>by TOON</span></div>
         <nav>
             <a href="#about">หน้าแรก</a>
             <a href="#minigame">มินิเกม</a>
             <a href="#portfolio">ผลงาน</a>
-            <a href="#crm">ลงทะเบียน (CRM)</a>
+            <a href="#crm">ระบบ CRM</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="about">
         <h1>GAME DESIGN BY TOON</h1>
-        <p>สร้างสรรค์ประสบการณ์เกมสุดล้ำ ด้วยดีไซน์แนวคิดเกมยุคใหม่ น่าสนใจ น่าเล่น และระบบเกมเพลย์ที่ท้าทาย</p>
-        <a href="#minigame" class="btn"><i class="fa-solid fa-gamepad"></i> ทดลองเล่นมินิเกม</a>
+        <p>ออกแบบแนวคิดเกม สถาปัตยกรรมเกมเพลย์ และประสบการณ์เล่นเกมสุดล้ำสมัย น่าสนใจ และท้าทายผู้เล่น</p>
+        <a href="#minigame" class="btn"><i class="fa-solid fa-gamepad"></i> ลองเล่นมินิเกมดักจับพลังงาน</a>
     </section>
 
     <!-- Mini Game Section -->
     <section class="section" id="minigame">
-        <h2 class="section-title">มินิเกม: Orb Catcher Challenge</h2>
+        <h2 class="section-title">มินิเกม: Neon Orb Catcher</h2>
         <div class="game-box">
-            <p>คลิกเก็บเป้าหมายพลังงานแสงนีออนให้ได้มากที่สุดภายใน 15 วินาที!</p>
+            <p>คลิกเป้าหมายแสงนีออนเพื่อสะสมคะแนนให้ได้มากที่สุดภายใน 15 วินาที!</p>
             <canvas id="gameCanvas" width="480" height="280"></canvas>
             <div class="score-board">
                 คะแนน: <span id="scoreText">0</span> | เวลาเหลือ: <span id="timeText">15</span> วินาที
@@ -303,46 +320,46 @@
 
     <!-- Game Concepts Portfolio Section -->
     <section class="section" id="portfolio">
-        <h2 class="section-title">ผลงานออกแบบเกม (Game Concepts)</h2>
+        <h2 class="section-title">แนวคิดการออกแบบเกม (Game Concepts)</h2>
         <div class="grid">
             <div class="card">
                 <i class="fa-solid fa-dragon"></i>
                 <h3>Cyber Realm RPG</h3>
-                <p>เกม Action RPG โลกอนาคต ผสมผสานเวทมนตร์และเทคโนโลยีล้ำสมัย</p>
+                <p>เกม Action RPG ยุคไซเบอร์ ผสมผสานเวทมนตร์และเทคโนโลยีอนาคต</p>
             </div>
             <div class="card">
                 <i class="fa-solid fa-brain"></i>
                 <h3>Neon Escape</h3>
-                <p>เกมไขปริศนามิตินีออน ออกแบบระบบเพื่อการเล่นบนมือถือ</p>
+                <p>เกมไขปริศนาสไตล์นีออน ออกแบบเฉพาะสมาร์ทโฟน เล่นง่าย ได้ความท้าทาย</p>
             </div>
             <div class="card">
                 <i class="fa-solid fa-chess-knight"></i>
                 <h3>Gamer Empire</h3>
-                <p>เกมวางแผนบริหารค่ายเกมก้าวสู่อันดับ 1 ของโลก</p>
+                <p>เกมวางแผนจำลองการสร้างค่ายเกม มุ่งสู่บริษัทเกมอันดับ 1 ของโลก</p>
             </div>
         </div>
     </section>
 
-    <!-- CRM System Form -->
+    <!-- CRM Customer Data Collection Section -->
     <section class="section" id="crm">
-        <h2 class="section-title">ระบบสมาชิก & CRM</h2>
+        <h2 class="section-title">ลงทะเบียนรับสิทธิ์พิเศษ (CRM System)</h2>
         <div class="crm-container">
             <p style="text-align: center; margin-bottom: 20px; color: #aaa;">
-                กรอกข้อมูลเพื่อรับสิทธิ์ทดสอบเกมเวอร์ชัน Beta และข้อเสนอพิเศษ
+                กรอกข้อมูลผู้ใช้งานเพื่อรับสิทธิ์ทดสอบเกม Alpha/Beta และติดตามข่าวสารจาก TOON
             </p>
             <form id="crmForm" onsubmit="handleCRMSubmit(event)">
                 <div class="form-group">
                     <label for="fullname"><i class="fa-solid fa-user"></i> ชื่อ-นามสกุล / ชื่อเล่น:</label>
-                    <input type="text" id="fullname" placeholder="ระบุชื่อของคุณ" required>
+                    <input type="text" id="fullname" placeholder="กรอกชื่อของคุณ" required>
                 </div>
                 <div class="form-group">
                     <label for="email"><i class="fa-solid fa-envelope"></i> อีเมล (Email):</label>
                     <input type="email" id="email" placeholder="example@email.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="gameType"><i class="fa-solid fa-gamepad"></i> แนวเกมที่ชอบมากที่สุด:</label>
+                    <label for="gameType"><i class="fa-solid fa-gamepad"></i> แนวเกมที่สนใจมากที่สุด:</label>
                     <select id="gameType" required>
-                        <option value="">-- เลือกแนวเกม --</option>
+                        <option value="">-- เลือกแนวเกมที่ชอบ --</option>
                         <option value="Action/RPG">Action / RPG</option>
                         <option value="Puzzle/Casual">Puzzle / Casual</option>
                         <option value="Strategy">Strategy / Simulation</option>
@@ -350,15 +367,18 @@
                 </div>
                 <div class="form-group">
                     <label for="message"><i class="fa-solid fa-comment"></i> ข้อเสนอแนะ:</label>
-                    <textarea id="message" rows="3" placeholder="ข้อความถึง TOON..."></textarea>
+                    <textarea id="message" rows="3" placeholder="ข้อความถึงนักออกแบบเกม..."></textarea>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;"><i class="fa-solid fa-paper-plane"></i> บันทึกข้อมูล CRM</button>
+                <button type="submit" class="btn" style="width: 100%;"><i class="fa-solid fa-paper-plane"></i> ส่งข้อมูลลงทะเบียน CRM</button>
             </form>
 
+            <!-- CRM Dashboard / Data Management Log -->
             <div class="crm-stats">
-                <h4><i class="fa-solid fa-database"></i> สถิติข้อมูลลูกค้า (CRM Data Log):</h4>
+                <h4><i class="fa-solid fa-database"></i> สถิติข้อมูลลูกค้าในระบบ (CRM Log):</h4>
                 <p>จำนวนผู้ลงทะเบียนสะสม: <strong id="leadCount" style="color:var(--primary)">0</strong> คน</p>
-                <div id="latestLead" style="margin-top: 5px; color:#888;">ยังไม่มีข้อมูลล่าสุด</div>
+                <div id="latestLead" style="margin-top: 5px; color:#888;">ยังไม่มีข้อมูลในระบบ</div>
+                <button class="btn-small" onclick="exportCRMData()"><i class="fa-solid fa-download"></i> ส่งออกข้อมูล JSON</button>
+                <button class="btn-small" onclick="clearCRMData()" style="background:#551111;"><i class="fa-solid fa-trash"></i> ล้างข้อมูล</button>
             </div>
         </div>
     </section>
@@ -369,14 +389,14 @@
 
     <!-- JavaScript Logic -->
     <script>
-        /* 1. Mini Game Code */
+        /* 1. Mini Game Code (พร้อมแก้ไขพิกัดคลิก Responsive) */
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         let score = 0;
         let timeLeft = 15;
         let gameTimer = null;
         let isPlaying = false;
-        let target = { x: 100, y: 100, radius: 20 };
+        let target = { x: 100, y: 100, radius: 22 };
 
         function drawTarget() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -392,16 +412,20 @@
         }
 
         function moveTarget() {
-            target.x = Math.random() * (canvas.width - 40) + 20;
-            target.y = Math.random() * (canvas.height - 40) + 20;
+            target.x = Math.random() * (canvas.width - 60) + 30;
+            target.y = Math.random() * (canvas.height - 60) + 30;
             drawTarget();
         }
 
-        canvas.addEventListener('click', function(e) {
+        function handleCanvasClick(e) {
             if (!isPlaying) return;
             const rect = canvas.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
-            const clickY = e.clientY - rect.top;
+            // คำนวณอัตราส่วนย่อขยายของ Canvas บนจอภาพ
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+
+            const clickX = (e.clientX - rect.left) * scaleX;
+            const clickY = (e.clientY - rect.top) * scaleY;
 
             const dist = Math.hypot(clickX - target.x, clickY - target.y);
             if (dist < target.radius) {
@@ -409,7 +433,9 @@
                 document.getElementById('scoreText').innerText = score;
                 moveTarget();
             }
-        });
+        }
+
+        canvas.addEventListener('pointerdown', handleCanvasClick);
 
         function startGame() {
             score = 0;
@@ -429,19 +455,21 @@
                     clearInterval(gameTimer);
                     isPlaying = false;
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    alert(`⏰ หมดเวลา! คะแนนของคุณคือ: ${score} คะแนน`);
+                    alert(`⏰ หมดเวลา! คะแนนที่คุณทำได้คือ: ${score} คะแนน`);
                     document.getElementById('startBtn').disabled = false;
                 }
             }, 1000);
         }
 
-        /* 2. CRM System Code */
+        /* 2. CRM System Code (พร้อมฟังก์ชัน บันทึก/แสดงผล/ส่งออก) */
         function updateCRMStats() {
             const leads = JSON.parse(localStorage.getItem('toon_crm_leads') || '[]');
             document.getElementById('leadCount').innerText = leads.length;
             if (leads.length > 0) {
                 const latest = leads[leads.length - 1];
-                document.getElementById('latestLead').innerText = `คนล่าสุด: คุณ ${latest.fullname} (${latest.gameType})`;
+                document.getElementById('latestLead').innerText = `ล่าสุด: คุณ ${latest.fullname} (${latest.gameType}) - ${latest.timestamp}`;
+            } else {
+                document.getElementById('latestLead').innerText = 'ยังไม่มีข้อมูลในระบบ';
             }
         }
 
@@ -452,14 +480,38 @@
             const gameType = document.getElementById('gameType').value;
             const message = document.getElementById('message').value;
 
-            const newLead = { fullname, email, gameType, message, timestamp: new Date().toLocaleString('th-TH') };
+            const newLead = {
+                fullname,
+                email,
+                gameType,
+                message,
+                timestamp: new Date().toLocaleString('th-TH')
+            };
+
             const leads = JSON.parse(localStorage.getItem('toon_crm_leads') || '[]');
             leads.push(newLead);
             localStorage.setItem('toon_crm_leads', JSON.stringify(leads));
 
-            alert(`🎉 บันทึกข้อมูลคุณ ${fullname} เรียบร้อยแล้ว!`);
+            alert(`🎉 บันทึกข้อมูลคุณ ${fullname} เข้าสู่ระบบ CRM เรียบร้อยแล้ว!`);
             document.getElementById('crmForm').reset();
             updateCRMStats();
+        }
+
+        function exportCRMData() {
+            const leads = localStorage.getItem('toon_crm_leads') || '[]';
+            const blob = new Blob([leads], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'toon_crm_leads.json';
+            a.click();
+        }
+
+        function clearCRMData() {
+            if (confirm('คุณต้องการล้างข้อมูล CRM ทั้งหมดใช่หรือไม่?')) {
+                localStorage.removeItem('toon_crm_leads');
+                updateCRMStats();
+            }
         }
 
         window.onload = updateCRMStats;
