@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Design by TOON</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&family=Orbitron:wght@500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-color: #0a0b10;
-            --card-bg: #141722;
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
             --primary: #00f0ff;
-            --secondary: #ff0055;
-            --accent: #39ff14;
-            --text-color: #e0e6ed;
-            --text-dim: #94a3b8;
+            --secondary: #ff007f;
+            --text-color: #c5c6c7;
+            --accent: #66fcf1;
         }
 
         * {
@@ -32,18 +32,18 @@
             overflow-x: hidden;
         }
 
-        /* Navbar */
+        /* Navigation Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 8%;
-            background: rgba(10, 11, 16, 0.95);
+            padding: 20px 8%;
+            background: rgba(15, 15, 26, 0.9);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 240, 255, 0.2);
         }
 
@@ -52,28 +52,28 @@
             font-size: 1.5rem;
             font-weight: 800;
             color: #fff;
-            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .logo span {
             color: var(--primary);
-            text-shadow: 0 0 12px var(--primary);
+            text-shadow: 0 0 10px var(--primary);
         }
 
         nav a {
-            color: var(--text-color);
+            color: #fff;
             text-decoration: none;
-            margin-left: 24px;
-            font-weight: 400;
+            margin-left: 20px;
             transition: 0.3s;
+            font-size: 0.95rem;
         }
 
         nav a:hover {
             color: var(--primary);
-            text-shadow: 0 0 10px var(--primary);
+            text-shadow: 0 0 8px var(--primary);
         }
 
-        /* Hero Section */
+        /* Hero Banner Section */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -81,9 +81,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 130px 20px 60px;
-            background: radial-gradient(circle at 50% 30%, #1a1d2e 0%, #0a0b10 70%);
-            position: relative;
+            padding: 120px 20px 60px;
+            background: radial-gradient(circle at center, #1b1e2e 0%, #0b0c10 100%);
         }
 
         .hero h1 {
@@ -91,54 +90,46 @@
             font-size: 3.2rem;
             color: #fff;
             margin-bottom: 15px;
-            text-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--secondary);
-            text-shadow: 0 0 25px rgba(255, 0, 85, 0.6);
+            text-shadow: 0 0 20px var(--primary);
         }
 
         .hero p {
             font-size: 1.2rem;
-            max-width: 650px;
+            max-width: 600px;
             margin-bottom: 30px;
-            color: var(--text-dim);
+            color: #a0a5b5;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 32px;
+            padding: 12px 30px;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: #fff;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 1.05rem;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
             border: none;
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(255, 0, 85, 0.7);
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.6);
         }
 
-        /* Section Layout */
+        /* Main Section Container */
         .section {
-            padding: 80px 8%;
+            padding: 70px 8%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #fff;
             margin-bottom: 40px;
-            font-family: 'Orbitron', sans-serif;
-            position: relative;
         }
 
         .section-title::after {
@@ -152,191 +143,135 @@
             box-shadow: 0 0 10px var(--primary);
         }
 
-        /* Mini Game Section */
-        .game-wrapper {
+        /* Interactive Mini Game */
+        .game-box {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 15px;
+            padding: 25px;
             text-align: center;
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-            max-width: 700px;
+            border: 1px solid rgba(102, 252, 241, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .game-status {
-            display: flex;
-            justify-content: space-around;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            background: rgba(0,0,0,0.4);
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .game-status span {
-            color: var(--primary);
-        }
-
         #gameCanvas {
-            background: #050608;
+            background: #05050a;
             border: 2px solid var(--primary);
-            border-radius: 12px;
-            margin: 10px 0 20px;
+            border-radius: 10px;
+            margin: 20px 0;
             cursor: crosshair;
             width: 100%;
-            max-width: 500px;
-            height: 300px;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+            max-width: 480px;
+            height: 280px;
         }
 
-        /* Portfolio Cards */
+        .score-board {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* Game Concepts Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
 
         .card {
             background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
+            border-radius: 12px;
+            padding: 20px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
+            transition: 0.3s;
+            text-align: center;
         }
 
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             border-color: var(--primary);
-            box-shadow: 0 8px 25px rgba(0, 240, 255, 0.25);
+            box-shadow: 0 5px 20px rgba(0, 240, 255, 0.2);
         }
 
-        .card-icon {
-            height: 160px;
-            background: linear-gradient(135deg, #1e2436 0%, #0d101d 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
+        .card i {
+            font-size: 2.5rem;
             color: var(--primary);
+            margin-bottom: 15px;
         }
 
-        .card-body {
-            padding: 22px;
-        }
-
-        .card-body h3 {
+        .card h3 {
             color: #fff;
-            margin-bottom: 8px;
-            font-size: 1.3rem;
-        }
-
-        .card-body p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
+            margin-bottom: 10px;
         }
 
         /* CRM Section */
-        .crm-box {
-            background: linear-gradient(135deg, #141722 0%, #0d0f18 100%);
-            border: 1px solid rgba(255, 0, 85, 0.3);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 750px;
+        .crm-container {
+            background: linear-gradient(135deg, #1f2833 0%, #0b0c10 100%);
+            border: 1px solid var(--secondary);
+            border-radius: 15px;
+            padding: 35px;
+            max-width: 600px;
             margin: 0 auto;
-            box-shadow: 0 0 30px rgba(255, 0, 85, 0.15);
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.2);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #fff;
-            font-size: 0.95rem;
         }
 
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 12px 16px;
-            background: #090a0f;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
+            padding: 10px 14px;
+            background: #0b0c10;
+            border: 1px solid #333;
+            border-radius: 8px;
             color: #fff;
-            font-size: 1rem;
+            font-size: 0.95rem;
             outline: none;
-            transition: 0.3s;
         }
 
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
         }
 
-        /* CRM Log Table */
-        .crm-dashboard {
-            margin-top: 35px;
-            padding-top: 25px;
-            border-top: 1px dashed rgba(255, 255, 255, 0.15);
-        }
-
-        .crm-dashboard h4 {
-            color: var(--accent);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .table-responsive {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .crm-stats {
+            margin-top: 25px;
+            background: rgba(0,0,0,0.5);
+            padding: 15px;
+            border-radius: 8px;
             font-size: 0.85rem;
-            margin-top: 10px;
         }
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        th {
-            background: rgba(0, 240, 255, 0.1);
-            color: var(--primary);
-        }
-
-        /* Footer */
         footer {
             text-align: center;
-            padding: 30px;
-            background: #06070a;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: var(--text-dim);
+            padding: 25px;
+            background: #05050a;
+            border-top: 1px solid #222;
+            color: #666;
             font-size: 0.9rem;
         }
 
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            header { padding: 15px 5%; }
-            nav a { margin-left: 12px; font-size: 0.85rem; }
-            .section { padding: 60px 5%; }
+            header { padding: 15px 4%; }
+            nav a { margin-left: 10px; font-size: 0.85rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Header -->
     <header>
-        <div class="logo">GAME DESIGN <span>BY TOON</span></div>
+        <div class="logo">Game Design <span>by TOON</span></div>
         <nav>
             <a href="#about">หน้าแรก</a>
             <a href="#minigame">มินิเกม</a>
@@ -345,167 +280,120 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero" id="about">
-        <h1>GAME DESIGN <span>BY TOON</span></h1>
-        <p>สร้างสรรค์ประสบการณ์การเล่นเกมยุคใหม่ ด้วยระบบเกมเพลย์ที่แปลกใหม่ น่าเล่น และทรงพลัง สนับสนุนการออกแบบด้วยเทคโนโลยี AI</p>
+        <h1>GAME DESIGN BY TOON</h1>
+        <p>สร้างสรรค์ประสบการณ์เกมสุดล้ำ ด้วยดีไซน์แนวคิดเกมยุคใหม่ น่าสนใจ น่าเล่น และระบบเกมเพลย์ที่ท้าทาย</p>
         <a href="#minigame" class="btn"><i class="fa-solid fa-gamepad"></i> ทดลองเล่นมินิเกม</a>
     </section>
 
+    <!-- Mini Game Section -->
     <section class="section" id="minigame">
-        <h2 class="section-title">มินิเกม: NEON ORB HUNTER</h2>
-        <div class="game-wrapper">
-            <p style="margin-bottom: 15px; color: var(--text-dim);">
-                คลิกเก็บลูกบอลพลังงานแสงนีออน (Orb) ให้ได้มากที่สุดภายในเวลา 15 วินาที!
-            </p>
-            
-            <div class="game-status">
-                <div>คะแนน: <span id="scoreText">0</span></div>
-                <div>เวลาเหลือ: <span id="timeText">15</span>s</div>
+        <h2 class="section-title">มินิเกม: Orb Catcher Challenge</h2>
+        <div class="game-box">
+            <p>คลิกเก็บเป้าหมายพลังงานแสงนีออนให้ได้มากที่สุดภายใน 15 วินาที!</p>
+            <canvas id="gameCanvas" width="480" height="280"></canvas>
+            <div class="score-board">
+                คะแนน: <span id="scoreText">0</span> | เวลาเหลือ: <span id="timeText">15</span> วินาที
             </div>
-
-            <canvas id="gameCanvas" width="500" height="300"></canvas>
-            
-            <div>
-                <button class="btn" id="startBtn" onclick="startGame()">
-                    <i class="fa-solid fa-play"></i> เริ่มเล่นเกม
-                </button>
-            </div>
+            <br>
+            <button class="btn" id="startBtn" onclick="startGame()"><i class="fa-solid fa-play"></i> เริ่มเล่นเกม</button>
         </div>
     </section>
 
+    <!-- Game Concepts Portfolio Section -->
     <section class="section" id="portfolio">
-        <h2 class="section-title">แนวคิดการออกแบบเกม (GAME CONCEPTS)</h2>
+        <h2 class="section-title">ผลงานออกแบบเกม (Game Concepts)</h2>
         <div class="grid">
             <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
-                <div class="card-body">
-                    <h3>Cyberpunk Protocol</h3>
-                    <p>เกม Action RPG โลกไซเบอร์เนติกส์ เน้นระบบการต่อสู้ที่รวดเร็วและการอัปเกรดชิปสมอง</p>
-                </div>
+                <i class="fa-solid fa-dragon"></i>
+                <h3>Cyber Realm RPG</h3>
+                <p>เกม Action RPG โลกอนาคต ผสมผสานเวทมนตร์และเทคโนโลยีล้ำสมัย</p>
             </div>
             <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-ghost"></i></div>
-                <div class="card-body">
-                    <h3>Dungeon Echoes</h3>
-                    <p>เกมไขปริศนาดันเจี้ยนบรรยากาศลึกลับ ใช้คลื่นเสียงในการนำทางและต่อสู้กับสิ่งเร้นลับ</p>
-                </div>
+                <i class="fa-solid fa-brain"></i>
+                <h3>Neon Escape</h3>
+                <p>เกมไขปริศนามิตินีออน ออกแบบระบบเพื่อการเล่นบนมือถือ</p>
             </div>
             <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-space-shuttle"></i></div>
-                <div class="card-body">
-                    <h3>Starlight Voyager</h3>
-                    <p>เกมวางแผนการบินข้ามดวงดาว บริหารจัดการทรัพยากรยานแม่เพื่อการอยู่รอดของมนุษยชาติ</p>
-                </div>
+                <i class="fa-solid fa-chess-knight"></i>
+                <h3>Gamer Empire</h3>
+                <p>เกมวางแผนบริหารค่ายเกมก้าวสู่อันดับ 1 ของโลก</p>
             </div>
         </div>
     </section>
 
+    <!-- CRM System Form -->
     <section class="section" id="crm">
-        <h2 class="section-title">ระบบ CRM & สิทธิ์พิเศษ</h2>
-        <div class="crm-box">
-            <p style="text-align: center; margin-bottom: 25px; color: var(--text-dim);">
-                ลงทะเบียนเพื่อรับสิทธิ์ทดสอบเกมเวอร์ชัน Beta และข่าวสารอัปเดตผลงานจาก <strong>TOON</strong>
+        <h2 class="section-title">ระบบสมาชิก & CRM</h2>
+        <div class="crm-container">
+            <p style="text-align: center; margin-bottom: 20px; color: #aaa;">
+                กรอกข้อมูลเพื่อรับสิทธิ์ทดสอบเกมเวอร์ชัน Beta และข้อเสนอพิเศษ
             </p>
-            <form id="crmForm" onsubmit="saveCustomerData(event)">
+            <form id="crmForm" onsubmit="handleCRMSubmit(event)">
                 <div class="form-group">
                     <label for="fullname"><i class="fa-solid fa-user"></i> ชื่อ-นามสกุล / ชื่อเล่น:</label>
-                    <input type="text" id="fullname" placeholder="กรอกชื่อของคุณ" required>
+                    <input type="text" id="fullname" placeholder="ระบุชื่อของคุณ" required>
                 </div>
                 <div class="form-group">
                     <label for="email"><i class="fa-solid fa-envelope"></i> อีเมล (Email):</label>
                     <input type="email" id="email" placeholder="example@email.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone"><i class="fa-solid fa-phone"></i> เบอร์โทรศัพท์:</label>
-                    <input type="tel" id="phone" placeholder="08X-XXX-XXXX" required>
-                </div>
-                <div class="form-group">
-                    <label for="gameGenre"><i class="fa-solid fa-gamepad"></i> แนวเกมที่คุณชื่นชอบมากที่สุด:</label>
-                    <select id="gameGenre" required>
+                    <label for="gameType"><i class="fa-solid fa-gamepad"></i> แนวเกมที่ชอบมากที่สุด:</label>
+                    <select id="gameType" required>
                         <option value="">-- เลือกแนวเกม --</option>
                         <option value="Action/RPG">Action / RPG</option>
-                        <option value="Puzzle/Strategy">Puzzle / Strategy</option>
-                        <option value="Shooter/FPS">Shooter / FPS</option>
-                        <option value="Casual/Indie">Casual / Indie</option>
+                        <option value="Puzzle/Casual">Puzzle / Casual</option>
+                        <option value="Strategy">Strategy / Simulation</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="note"><i class="fa-solid fa-comment-dots"></i> ความคิดเห็น / ข้อเสนอแนะเพิ่มเติม:</label>
-                    <textarea id="note" rows="3" placeholder="ข้อความถึงผู้พัฒนา..."></textarea>
+                    <label for="message"><i class="fa-solid fa-comment"></i> ข้อเสนอแนะ:</label>
+                    <textarea id="message" rows="3" placeholder="ข้อความถึง TOON..."></textarea>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">
-                    <i class="fa-solid fa-paper-plane"></i> ยืนยันการลงทะเบียน CRM
-                </button>
+                <button type="submit" class="btn" style="width: 100%;"><i class="fa-solid fa-paper-plane"></i> บันทึกข้อมูล CRM</button>
             </form>
 
-            <div class="crm-dashboard">
-                <h4><i class="fa-solid fa-database"></i> CRM Data Log (ระบบจำลองฐานข้อมูลลูกค้า)</h4>
-                <p style="font-size:0.9rem; color:var(--text-dim)">
-                    จำนวนลูกค้ารวมในระบบ: <strong id="totalLeads" style="color:var(--primary)">0</strong> คน
-                </p>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>ชื่อ</th>
-                                <th>อีเมล</th>
-                                <th>แนวเกม</th>
-                                <th>เวลาบันทึก</th>
-                            </tr>
-                        </thead>
-                        <tbody id="crmTableBody">
-                            <tr>
-                                <td colspan="5" style="text-align:center; color:#666;">ยังไม่มีข้อมูลลูกค้าลงทะเบียน</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="crm-stats">
+                <h4><i class="fa-solid fa-database"></i> สถิติข้อมูลลูกค้า (CRM Data Log):</h4>
+                <p>จำนวนผู้ลงทะเบียนสะสม: <strong id="leadCount" style="color:var(--primary)">0</strong> คน</p>
+                <div id="latestLead" style="margin-top: 5px; color:#888;">ยังไม่มีข้อมูลล่าสุด</div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Game Design by TOON. All rights reserved. | Powered by AI Assistance</p>
+        <p>&copy; 2026 Game Design by TOON. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript Logic -->
     <script>
-        /* ----------------------------------------------------
-           1. Mini-Game Script (Orb Hunter Game)
-        ---------------------------------------------------- */
+        /* 1. Mini Game Code */
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         let score = 0;
         let timeLeft = 15;
         let gameTimer = null;
         let isPlaying = false;
-        let target = { x: 250, y: 150, radius: 22 };
+        let target = { x: 100, y: 100, radius: 20 };
 
         function drawTarget() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             if (!isPlaying) return;
 
-            // วาดเป้าหมายวงกลมนีออน
             ctx.beginPath();
             ctx.arc(target.x, target.y, target.radius, 0, Math.PI * 2);
             ctx.fillStyle = '#00f0ff';
-            ctx.shadowBlur = 20;
+            ctx.shadowBlur = 15;
             ctx.shadowColor = '#00f0ff';
-            ctx.fill();
-            ctx.closePath();
-            
-            // วาดวงกลมชั้นใน
-            ctx.beginPath();
-            ctx.arc(target.x, target.y, target.radius * 0.5, 0, Math.PI * 2);
-            ctx.fillStyle = '#ffffff';
             ctx.fill();
             ctx.closePath();
         }
 
         function moveTarget() {
-            const padding = 30;
-            target.x = padding + Math.random() * (canvas.width - padding * 2);
-            target.y = padding + Math.random() * (canvas.height - padding * 2);
+            target.x = Math.random() * (canvas.width - 40) + 20;
+            target.y = Math.random() * (canvas.height - 40) + 20;
             drawTarget();
         }
 
@@ -515,8 +403,8 @@
             const clickX = e.clientX - rect.left;
             const clickY = e.clientY - rect.top;
 
-            const distance = Math.hypot(clickX - target.x, clickY - target.y);
-            if (distance <= target.radius) {
+            const dist = Math.hypot(clickX - target.x, clickY - target.y);
+            if (dist < target.radius) {
                 score += 10;
                 document.getElementById('scoreText').innerText = score;
                 moveTarget();
@@ -541,72 +429,40 @@
                     clearInterval(gameTimer);
                     isPlaying = false;
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    alert(`🎮 หมดเวลา! คุณทำคะแนนได้ทั้งหมด: ${score} คะแนน`);
+                    alert(`⏰ หมดเวลา! คะแนนของคุณคือ: ${score} คะแนน`);
                     document.getElementById('startBtn').disabled = false;
                 }
             }, 1000);
         }
 
-        /* ----------------------------------------------------
-           2. CRM Data Collection Script (Save & Display)
-        ---------------------------------------------------- */
-        function loadCRMData() {
-            const data = JSON.parse(localStorage.getItem('toon_crm_customers') || '[]');
-            document.getElementById('totalLeads').innerText = data.length;
-            
-            const tbody = document.getElementById('crmTableBody');
-            if (data.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#666;">ยังไม่มีข้อมูลลูกค้าลงทะเบียน</td></tr>';
-                return;
+        /* 2. CRM System Code */
+        function updateCRMStats() {
+            const leads = JSON.parse(localStorage.getItem('toon_crm_leads') || '[]');
+            document.getElementById('leadCount').innerText = leads.length;
+            if (leads.length > 0) {
+                const latest = leads[leads.length - 1];
+                document.getElementById('latestLead').innerText = `คนล่าสุด: คุณ ${latest.fullname} (${latest.gameType})`;
             }
-
-            tbody.innerHTML = '';
-            data.slice().reverse().forEach((item, index) => {
-                const row = `<tr>
-                    <td>${data.length - index}</td>
-                    <td>${escapeHtml(item.fullname)}</td>
-                    <td>${escapeHtml(item.email)}</td>
-                    <td>${escapeHtml(item.genre)}</td>
-                    <td>${item.time}</td>
-                </tr>`;
-                tbody.innerHTML += row;
-            });
         }
 
-        function saveCustomerData(event) {
-            event.preventDefault();
-            const fullname = document.getElementById('fullname').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const genre = document.getElementById('gameGenre').value;
-            const note = document.getElementById('note').value.trim();
+        function handleCRMSubmit(e) {
+            e.preventDefault();
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const gameType = document.getElementById('gameType').value;
+            const message = document.getElementById('message').value;
 
-            const newCustomer = {
-                fullname,
-                email,
-                phone,
-                genre,
-                note,
-                time: new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' })
-            };
+            const newLead = { fullname, email, gameType, message, timestamp: new Date().toLocaleString('th-TH') };
+            const leads = JSON.parse(localStorage.getItem('toon_crm_leads') || '[]');
+            leads.push(newLead);
+            localStorage.setItem('toon_crm_leads', JSON.stringify(leads));
 
-            const customers = JSON.parse(localStorage.getItem('toon_crm_customers') || '[]');
-            customers.push(newCustomer);
-            localStorage.setItem('toon_crm_customers', JSON.stringify(customers));
-
-            alert(`✅ บันทึกข้อมูลเรียบร้อยแล้ว!\nขอบคุณคุณ ${fullname} ที่ลงทะเบียนร่วมกับ TOON CRM`);
+            alert(`🎉 บันทึกข้อมูลคุณ ${fullname} เรียบร้อยแล้ว!`);
             document.getElementById('crmForm').reset();
-            loadCRMData();
+            updateCRMStats();
         }
 
-        function escapeHtml(text) {
-            return text.replace(/[&<>"']/g, function(m) {
-                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
-            });
-        }
-
-        // โหลดข้อมูล CRM เมื่อเปิดเว็บ
-        window.onload = loadCRMData;
+        window.onload = updateCRMStats;
     </script>
 </body>
 </html>
